@@ -1,16 +1,26 @@
 package org.example;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MainWindow main = new MainWindow();
+                main.show();
+            }
+        });
+        //Temporary early exit
+        //System.exit(0);
         Scanner scnr = new Scanner(System.in);
         String solution = "Party";
-        String guess;
+        //String guess;
         System.out.println("Hello and welcome to our wordle game!");
-        guess = inputValidation(scnr);
-        System.out.println("Your guess was: " + guess);
+        //guess = inputValidation(scnr);
+        //System.out.println("Your guess was: " + guess);
         System.out.println("The correct word was: " + solution);
     }
 
