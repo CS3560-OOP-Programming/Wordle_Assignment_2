@@ -14,6 +14,8 @@ public class MainWindow {
     private JLabel label;
     private JLabel w1, w2, w3, w4, w5, w6;
     private JButton enterButton;
+    private int guessNum = 1;
+    final String solution = "Party";
 
 
     public MainWindow(){
@@ -93,8 +95,64 @@ public class MainWindow {
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                for(int i = 0; i < solution.length(); i++){
+                    //no need to repeat 5 times, make optimal later
+                    //each initializes the string verision of the solution char
+                    //compares it to the input char
+                    String gC1 = String.valueOf(solution.charAt(i));
+                    if(gC1.equalsIgnoreCase(gChar1.getText())){
+                        System.out.println("Match");
+                    }
+                    String gC2 = String.valueOf(solution.charAt(i));
+                    if(gC2.equalsIgnoreCase(gChar2.getText())){
+                        System.out.println("Match");
+                    }
+                    String gC3 = String.valueOf(solution.charAt(i));
+                    if(gC3.equalsIgnoreCase(gChar3.getText())){
+                        System.out.println("Match");
+                    }
+                    String gC4 = String.valueOf(solution.charAt(i));
+                    if(gC4.equalsIgnoreCase(gChar4.getText())){
+                        System.out.println("Match");
+                    }
+                    String gC5 = String.valueOf(solution.charAt(i));
+                    if(gC5.equalsIgnoreCase(gChar5.getText())){
+                        System.out.println("Match");
+                    }
+                    //System.out.println(Character.toUpperCase(solution.charAt(i)));
+                    //System.out.println(Character.toUpperCase(gChar1.getText()));
+                    //System.out.println(gC1);
+                }
                 String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
                 System.out.println(gWord);
+                //Want to make it so that after it checks if the word is an actual dictionary word it  continues and updates the guess num
+                //Switch statement below takes the guess num and outputs it with the guess string(with designated colors)
+                switch(guessNum){
+                    case 1:
+                        w1.setText(gWord);
+                        break;
+                    case 2:
+                        w2.setText(gWord);
+                        break;
+                    case 3:
+                        w3.setText(gWord);
+                        break;
+                    case 4:
+                        w4.setText(gWord);
+                        break;
+                    case 5:
+                        w5.setText(gWord);
+                        break;
+                    case 6:
+                        w6.setText(gWord);
+                        break;
+                    default:
+                        System.out.println("You've exceeded your guesses");
+                        System.exit(0);
+                }
+
+                System.out.println("guess " + guessNum);
+                guessNum++;
             }
         });
 
