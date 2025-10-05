@@ -10,12 +10,8 @@ public class MainWindow {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
-    private JLabel w1;
-    private JLabel w2;
-    private JLabel w3;
-    private JLabel w4;
-    private JLabel w5;
-    private JLabel w6;
+    private JLabel w1, w2, w3, w4, w5, w6;
+    private JButton enterButton;
 
 
     public MainWindow(){
@@ -31,7 +27,7 @@ public class MainWindow {
         frame.add(panel, BorderLayout.CENTER);
 
         label = new JLabel("Wordle", SwingConstants.CENTER);
-        label.setFont(new Font("Arial", Font.PLAIN, 32));
+        label.setFont(new Font("Arial", Font.BOLD, 32));
         panel.add(label);
         w1 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
         panel.add(w1);
@@ -89,39 +85,11 @@ public class MainWindow {
         gChar5.setPreferredSize(new Dimension(40,40));
         textPanel.add(gChar5);
         gChar5.addKeyListener(new keyInputValidation(gChar5));
-        //old redundant code below
-        //JTextField gChar2 = new JTextField(1);
-        //JTextField gChar3 = new JTextField(1);
-        //JTextField gChar4 = new JTextField(1);
-        //JTextField gChar5 = new JTextField(1);
-        //guess.setFont(new Font("Arial", Font.PLAIN, 24));
-        //textPanel.setPreferredSize(new Dimension(200, 40));
-        /**
-         gChar1.addKeyListener(new KeyListener() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-        char x = e.getKeyChar();
-        if((!validInput(String.valueOf(x))) || (!gChar1.getText().isEmpty() && e.getKeyChar() != KeyEvent.VK_BACK_SPACE && e.getKeyChar() != KeyEvent.VK_DELETE)){
-        e.consume();
-        }
-        }
 
-        @Override
-        public void keyPressed(KeyEvent e) {
+        JButton enterButton = new JButton("Submit guess");
 
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-
-        }
-        });
-         **/
-        textPanel.add(gChar2);
-        textPanel.add(gChar3);
-        textPanel.add(gChar4);
-        textPanel.add(gChar5);
         panel.add(textPanel);
+        panel.add(enterButton);
     }
 
     public void show(){
