@@ -12,6 +12,7 @@ public class MainWindow {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
+    private JLabel[][] w;
     private JLabel w1, w2, w3, w4, w5, w6;
     private JButton enterButton;
     private int guessNum = 1;
@@ -25,6 +26,9 @@ public class MainWindow {
         frame.setSize(600, 700);
         frame.setLocationRelativeTo(null);
 
+        //initializing array
+        //switched to array to allow for personalization of chars
+        w = new JLabel[6][6];
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel.setLayout(new GridLayout(9, 1, 0, 20));
@@ -33,26 +37,61 @@ public class MainWindow {
         label = new JLabel("Wordle", SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 32));
         panel.add(label);
-        w1 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w1);
 
-        w2 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w2);
+        //Code below makes a text panel for each 6 guesses
+        //Subject to optimization
+        JPanel gTextPanel1 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel1.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[0][i] = new JLabel("___");
+            gTextPanel1.add(w[0][i]);
+        }
+        panel.add(gTextPanel1);
 
-        w3 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w3);
+        JPanel gTextPanel2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel2.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[1][i] = new JLabel("___");
+            gTextPanel2.add(w[1][i]);
+        }
+        panel.add(gTextPanel2);
 
-        w4 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w4);
+        JPanel gTextPanel3 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel3.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[2][i] = new JLabel("___");
+            gTextPanel3.add(w[2][i]);
+        }
+        panel.add(gTextPanel3);
 
-        w5 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w5);
+        JPanel gTextPanel4 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel4.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[3][i] = new JLabel("___");
+            gTextPanel4.add(w[0][i]);
+        }
+        panel.add(gTextPanel4);
 
-        w6 = new JLabel("___ ___ ___ ___ ___", SwingConstants.CENTER);
-        panel.add(w6);
+        JPanel gTextPanel5 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel5.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[4][i] = new JLabel("___");
+            gTextPanel5.add(w[4][i]);
+        }
+        panel.add(gTextPanel5);
+
+        JPanel gTextPanel6 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
+        gTextPanel6.setLayout(new FlowLayout(FlowLayout.CENTER));
+        for(int i = 0; i < 5; i++){
+            w[5][i] = new JLabel("___");
+            gTextPanel6.add(w[5][i]);
+        }
+        panel.add(gTextPanel6);
 
         JPanel textPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         textPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+
         //Initializing each individual guess character with max length 1, font type, and size(subject to OOP changes?)
         //Also calls keyInputValidation to prevent digits and non alphabet chars from being called
         JTextField gChar1 = new JTextField(1);
@@ -102,9 +141,11 @@ public class MainWindow {
                     String gC1 = String.valueOf(solution.charAt(i));
                     if(gC1.equalsIgnoreCase(gChar1.getText())){
                         System.out.println("Match");
+                        //gChar1.setFont(new Font("Arial", Font.BOLD, 43));
                     }
                     String gC2 = String.valueOf(solution.charAt(i));
                     if(gC2.equalsIgnoreCase(gChar2.getText())){
+                        gChar2.setForeground(Color.GREEN);
                         System.out.println("Match");
                     }
                     String gC3 = String.valueOf(solution.charAt(i));
@@ -129,7 +170,8 @@ public class MainWindow {
                 //Switch statement below takes the guess num and outputs it with the guess string(with designated colors)
                 switch(guessNum){
                     case 1:
-                        w1.setText(gWord);
+                        w1.setText(gChar1.getText());
+                        //w1.setForeground(Color.GREEN);
                         break;
                     case 2:
                         w2.setText(gWord);

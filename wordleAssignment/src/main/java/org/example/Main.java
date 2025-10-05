@@ -19,9 +19,7 @@ public class Main {
         String solution = "Party";
         //String guess;
         System.out.println("Hello and welcome to our wordle game!");
-        //guess = inputValidation(scnr);
-        //System.out.println("Your guess was: " + guess);
-        System.out.println("The correct word was: " + solution);
+        //System.out.println("The correct word was: " + solution);
     }
 
     public static String inputValidation(Scanner scnr){
