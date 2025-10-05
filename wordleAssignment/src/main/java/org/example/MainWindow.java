@@ -2,6 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -58,6 +60,7 @@ public class MainWindow {
         textPanel.add(gChar1);
         gChar1.addKeyListener(new keyInputValidation(gChar1));
 
+
         JTextField gChar2 = new JTextField(1);
         gChar2.setFont(new Font("Arial", Font.BOLD, 22));
         gChar2.setHorizontalAlignment(JTextField.CENTER);
@@ -87,6 +90,13 @@ public class MainWindow {
         gChar5.addKeyListener(new keyInputValidation(gChar5));
 
         JButton enterButton = new JButton("Submit guess");
+        enterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
+                System.out.println(gWord);
+            }
+        });
 
         panel.add(textPanel);
         panel.add(enterButton);
