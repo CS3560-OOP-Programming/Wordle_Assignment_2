@@ -43,7 +43,7 @@ public class MainWindow {
         JPanel gTextPanel1 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel1.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[0][i] = new JLabel("___");
+            w[0][i] = new JLabel("_1__");
             gTextPanel1.add(w[0][i]);
         }
         panel.add(gTextPanel1);
@@ -51,7 +51,7 @@ public class MainWindow {
         JPanel gTextPanel2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel2.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[1][i] = new JLabel("___");
+            w[1][i] = new JLabel("_2__");
             gTextPanel2.add(w[1][i]);
         }
         panel.add(gTextPanel2);
@@ -59,7 +59,7 @@ public class MainWindow {
         JPanel gTextPanel3 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel3.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[2][i] = new JLabel("___");
+            w[2][i] = new JLabel("_3__");
             gTextPanel3.add(w[2][i]);
         }
         panel.add(gTextPanel3);
@@ -67,15 +67,15 @@ public class MainWindow {
         JPanel gTextPanel4 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel4.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[3][i] = new JLabel("___");
-            gTextPanel4.add(w[0][i]);
+            w[3][i] = new JLabel("_4__");
+            gTextPanel4.add(w[3][i]);
         }
         panel.add(gTextPanel4);
 
         JPanel gTextPanel5 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel5.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[4][i] = new JLabel("___");
+            w[4][i] = new JLabel("_5__");
             gTextPanel5.add(w[4][i]);
         }
         panel.add(gTextPanel5);
@@ -83,7 +83,7 @@ public class MainWindow {
         JPanel gTextPanel6 = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 0));
         gTextPanel6.setLayout(new FlowLayout(FlowLayout.CENTER));
         for(int i = 0; i < 5; i++){
-            w[5][i] = new JLabel("___");
+            w[5][i] = new JLabel("_6__");
             gTextPanel6.add(w[5][i]);
         }
         panel.add(gTextPanel6);
@@ -170,7 +170,7 @@ public class MainWindow {
                 //Switch statement below takes the guess num and outputs it with the guess string(with designated colors)
                 switch(guessNum){
                     case 1:
-                        w1.setText(gChar1.getText());
+                        w[0][3].setForeground(Color.GREEN);
                         //w1.setForeground(Color.GREEN);
                         break;
                     case 2:
