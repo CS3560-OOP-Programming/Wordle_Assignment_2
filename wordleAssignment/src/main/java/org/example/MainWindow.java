@@ -95,6 +95,7 @@ public class MainWindow {
 
         //Initializing each individual guess character with max length 1, font type, and size(subject to OOP changes?)
         //Also calls keyInputValidation to prevent digits and non alphabet chars from being called
+        //Below I started on some code making gchar an array instead, but reverted to original(DELETE BEFORE SUBMISSION)
         /**
         gChar = new JTextField[6];
         for(int i = 0; i < 5; i++){
@@ -148,38 +149,59 @@ public class MainWindow {
 
         JButton enterButton = new JButton("Submit guess");
         enterButton.addActionListener(new ActionListener() {
+            //int accumulator = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
+                int[] colorLayout = new int[5];
+                String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
                 for(int i = 0; i < solution.length(); i++){
-                    //no need to repeat 5 times, make optimal later
-                    //each initializes the string verision of the solution char
+                    //each initializes the string version of the solution char
                     //compares it to the input char
+                    //initializes guess character
+                    char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    //initializes solution char
+                    char soluC = Character.toUpperCase(solution.charAt(i));
+                    if(guessC == soluC){
+                        System.out.println("Match");
+                        colorLayout[i] = 1;
+                    }
+                }
+
+                    /**
                     String gC1 = String.valueOf(solution.charAt(i));
                     if(gC1.equalsIgnoreCase(gChar1.getText())){
-                        System.out.println("Match");
+                        //System.out.println("Match");
+                        colorLayout[i] = 1;
                         //gChar1.setFont(new Font("Arial", Font.BOLD, 43));
                     }
 
                     String gC2 = String.valueOf(solution.charAt(i));
                     if(gC2.equalsIgnoreCase(gChar2.getText())){
-                        gChar2.setForeground(Color.GREEN);
-                        System.out.println("Match");
+                        //System.out.println("Match");
+                        colorLayout[i] = 1;
                     }
                     String gC3 = String.valueOf(solution.charAt(i));
                     if(gC3.equalsIgnoreCase(gChar3.getText())){
-                        System.out.println("Match");
+                        //System.out.println("Match");
+                        colorLayout[i] = 1;
                     }
                     String gC4 = String.valueOf(solution.charAt(i));
                     if(gC4.equalsIgnoreCase(gChar4.getText())){
-                        System.out.println("Match");
+                        //System.out.println("Match");
+                        colorLayout[i] = 1;
                     }
                     String gC5 = String.valueOf(solution.charAt(i));
                     if(gC5.equalsIgnoreCase(gChar5.getText())){
-                        System.out.println("Match");
+                        //System.out.println("Match");
+                        colorLayout[i] = 1;
                     }
                     //System.out.println(Character.toUpperCase(solution.charAt(i)));
                     //System.out.println(Character.toUpperCase(gChar1.getText()));
                     //System.out.println(gC1);
+                }
+                     **/
+                for(int i = 0; i < 5; i++) {
+                    System.out.println(colorLayout[i]);
                 }
                 String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
                 System.out.println(gWord);
@@ -187,25 +209,82 @@ public class MainWindow {
                 //Switch statement below takes the guess num and outputs it with the guess string(with designated colors)
                 switch(guessNum){
                     case 1:
+
                         //w[0][0].setText(gChar[0].getText());
 
                         //w[0][3].setForeground(Color.GREEN);
                         //w1.setForeground(Color.GREEN);
+                        //Code below sets the characters to the users guess(green implementation)
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     case 2:
-                        w2.setText(gWord);
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     case 3:
-                        w3.setText(gWord);
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     case 4:
-                        w4.setText(gWord);
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     case 5:
-                        w5.setText(gWord);
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     case 6:
-                        w6.setText(gWord);
+                        for(int i = 0; i < 5; i++){
+                            if(colorLayout[i] == 1){
+                                w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                        }
+                        w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][4].setText(gChar5.getText());
                         break;
                     default:
                         System.out.println("You've exceeded your guesses");
