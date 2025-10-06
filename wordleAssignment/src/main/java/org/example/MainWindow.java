@@ -152,6 +152,14 @@ public class MainWindow {
             //int accumulator = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
+                /**
+                for(int i = 0; i < 5; i++){
+                    for(int j = 0; j < 5; j++){
+                        w[i][j].setSize(new Dimension(40, 40));
+                        w[i][j].setFont(new Font("Arial", Font.BOLD, 22));
+                    }
+                }
+                 **/
                 //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
@@ -202,11 +210,18 @@ public class MainWindow {
                                 w[guessNum-1][i].setForeground(new Color(225,225,0));
                             }
                         }
+                        //redundant code, can be optimized
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
                         break;
                     case 2:
                         for(int i = 0; i < 5; i++){
@@ -218,10 +233,15 @@ public class MainWindow {
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
                         break;
                     case 3:
                         for(int i = 0; i < 5; i++){
@@ -233,10 +253,15 @@ public class MainWindow {
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
                         break;
                     case 4:
                         for(int i = 0; i < 5; i++){
@@ -248,10 +273,15 @@ public class MainWindow {
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
                         break;
                     case 5:
                         for(int i = 0; i < 5; i++){
@@ -263,10 +293,15 @@ public class MainWindow {
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
                         break;
                     case 6:
                         for(int i = 0; i < 5; i++){
@@ -278,10 +313,15 @@ public class MainWindow {
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
+                        w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][1].setText(gChar2.getText());
+                        w[guessNum - 1][1].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][2].setText(gChar3.getText());
+                        w[guessNum - 1][2].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][3].setText(gChar4.getText());
+                        w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
+                        w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
                         break;
                     default:
                         System.out.println("You've exceeded your guesses");
