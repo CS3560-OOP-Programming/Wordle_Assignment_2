@@ -152,6 +152,7 @@ public class MainWindow {
             //int accumulator = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
+                //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
                 for(int i = 0; i < solution.length(); i++){
@@ -161,50 +162,29 @@ public class MainWindow {
                     char guessC = Character.toUpperCase(guess[i].charAt(0));
                     //initializes solution char
                     char soluC = Character.toUpperCase(solution.charAt(i));
+                    //if they equal each other print set color to green
                     if(guessC == soluC){
-                        System.out.println("Match");
+                        //System.out.println("Match");
                         colorLayout[i] = 1;
+                    }
+                    for(int j = 0; j < solution.length(); j++){
+                        //exits loop if already green
+                        if(colorLayout[i] == 1){
+                        break;
+                        }
+                        if((solution.toUpperCase().contains(String.valueOf(guessC)))){
+                            colorLayout[i] = 2;
+                        }
                     }
                 }
 
-                    /**
-                    String gC1 = String.valueOf(solution.charAt(i));
-                    if(gC1.equalsIgnoreCase(gChar1.getText())){
-                        //System.out.println("Match");
-                        colorLayout[i] = 1;
-                        //gChar1.setFont(new Font("Arial", Font.BOLD, 43));
-                    }
-
-                    String gC2 = String.valueOf(solution.charAt(i));
-                    if(gC2.equalsIgnoreCase(gChar2.getText())){
-                        //System.out.println("Match");
-                        colorLayout[i] = 1;
-                    }
-                    String gC3 = String.valueOf(solution.charAt(i));
-                    if(gC3.equalsIgnoreCase(gChar3.getText())){
-                        //System.out.println("Match");
-                        colorLayout[i] = 1;
-                    }
-                    String gC4 = String.valueOf(solution.charAt(i));
-                    if(gC4.equalsIgnoreCase(gChar4.getText())){
-                        //System.out.println("Match");
-                        colorLayout[i] = 1;
-                    }
-                    String gC5 = String.valueOf(solution.charAt(i));
-                    if(gC5.equalsIgnoreCase(gChar5.getText())){
-                        //System.out.println("Match");
-                        colorLayout[i] = 1;
-                    }
-                    //System.out.println(Character.toUpperCase(solution.charAt(i)));
-                    //System.out.println(Character.toUpperCase(gChar1.getText()));
-                    //System.out.println(gC1);
-                }
-                     **/
                 for(int i = 0; i < 5; i++) {
                     System.out.println(colorLayout[i]);
                 }
                 String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
                 System.out.println(gWord);
+
+
                 //Want to make it so that after it checks if the word is an actual dictionary word it  continues and updates the guess num
                 //Switch statement below takes the guess num and outputs it with the guess string(with designated colors)
                 switch(guessNum){
@@ -218,6 +198,8 @@ public class MainWindow {
                         for(int i = 0; i < 5; i++){
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
+                            } else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(new Color(225,225,0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -231,6 +213,9 @@ public class MainWindow {
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             }
+                            else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(Color.YELLOW);
+                            }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
                         w[guessNum - 1][1].setText(gChar2.getText());
@@ -242,6 +227,9 @@ public class MainWindow {
                         for(int i = 0; i < 5; i++){
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                            else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(Color.YELLOW);
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -255,6 +243,9 @@ public class MainWindow {
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             }
+                            else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(Color.YELLOW);
+                            }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
                         w[guessNum - 1][1].setText(gChar2.getText());
@@ -267,6 +258,9 @@ public class MainWindow {
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             }
+                            else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(Color.YELLOW);
+                            }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
                         w[guessNum - 1][1].setText(gChar2.getText());
@@ -278,6 +272,9 @@ public class MainWindow {
                         for(int i = 0; i < 5; i++){
                             if(colorLayout[i] == 1){
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
+                            }
+                            else if (colorLayout[i] == 2) {
+                                w[guessNum-1][i].setForeground(Color.YELLOW);
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
