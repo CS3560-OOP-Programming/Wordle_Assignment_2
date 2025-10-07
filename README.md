@@ -7,15 +7,17 @@
 ## How to Run
 1. Clone repository: `git clone [URL]`
 2. Open in IntelliJ/Eclipse or any other IDE
-4. Run `Main.java`
+3. Run `Main.java`
 
 ## Features Implemented
-- Feature 1: Description
+- Guess Input: using the submit button, the program accepts input from the user
 - Feature 2: Description
 - [Extra Credit] Feature X: Description
 
 ## Controls
--Enter input with the keyboard
+-Enter each letter slot by slot using the *keyboard*
+-Delete a letter using *backspace*
+-Press the *submit button* to enter a guess
 
 ## Known Issues
 - Issue 1: Description and workaround
@@ -24,3 +26,6 @@
 ## External Libraries
 - Gson 2.10.1 (JSON parsing)
 - JUnit 4.13 (testing)
+
+## Credits
+- Txt file of valid 5 letter words sourced from https://github.com/darkermango/5-Letter-words.git
