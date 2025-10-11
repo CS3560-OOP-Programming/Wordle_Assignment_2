@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.io.*;
 
 public class MainWindow {
     //encapsulation
@@ -17,10 +16,13 @@ public class MainWindow {
     private JButton enterButton;
     private int guessNum = 1;
     private JTextField[] gChar;
+    private Dictionary dictionary;
+    //private final String solution;
     final String solution = "Party";
 
 
     public MainWindow() {
+        dictionary = new Dictionary("wordleAssignment/ValidWords.txt");
         frame = new JFrame();
         frame.setTitle("Wordle.exe");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -189,7 +191,18 @@ public class MainWindow {
                     System.out.println(colorLayout[i]);
                 }
                 String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
-                System.out.println(gWord);
+
+                //Make sure word is in lower case so we can check if the dictionary contains it
+                String modifiedGWord = gWord.trim().toLowerCase();
+
+                //Checking if the guessed word is in our list
+                if(!dictionary.isInDictionary(modifiedGWord)){
+                    JOptionPane.showMessageDialog(frame, "That is not a valid word entry.");
+                    return;
+                }
+
+                //for debugging
+                System.out.println(modifiedGWord);
 
 
                 //Want to make it so that after it checks if the word is an actual dictionary word it  continues and updates the guess num
