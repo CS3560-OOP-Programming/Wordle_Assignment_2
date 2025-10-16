@@ -35,4 +35,12 @@ public class Dictionary {
     public boolean isInDictionary(String word){
         return validWords.contains(word.toLowerCase());
     }
+
+    public Set<String> getValidWords(){
+        return validWords;
+    }
+
+    public int size(){
+        return validWords.size();
+    }
 }
