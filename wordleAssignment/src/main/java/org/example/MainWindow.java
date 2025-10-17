@@ -18,7 +18,7 @@ public class MainWindow {
     private JTextField[] gChar;
     private Dictionary dictionary;
     //private final String solution;
-    final String solution = "Party";
+    final String solution = "Bears";
 
 
     public MainWindow() {
@@ -32,6 +32,8 @@ public class MainWindow {
         //initializing array
         //switched to array to allow for personalization of chars
         w = new JLabel[6][6];
+        //array for letters used to solve duplicate bug
+        int lUsed[] = new int[solution.length()];
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel.setLayout(new GridLayout(9, 1, 0, 20));
@@ -164,6 +166,8 @@ public class MainWindow {
                 //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
+
+                //Green coloring logic here
                 for (int i = 0; i < solution.length(); i++) {
                     //each initializes the string version of the solution char
                     //compares it to the input char
@@ -175,17 +179,28 @@ public class MainWindow {
                     if (guessC == soluC) {
                         //System.out.println("Match");
                         colorLayout[i] = 1;
+                        lUsed[i] = 1;
                     }
+                }
+                //yellow coloring
+                for (int i = 0; i < solution.length(); i++) {
+                    //exits loop if already green
+                    if (colorLayout[i] == 1) {
+                        continue;
+                    }
+                    char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    //initializes solution char
                     for (int j = 0; j < solution.length(); j++) {
-                        //exits loop if already green
-                        if (colorLayout[i] == 1) {
-                            break;
-                        }
-                        if ((solution.toUpperCase().contains(String.valueOf(guessC)))) {
+                        char soluC = Character.toUpperCase(solution.charAt(j));
+                        //if it hasnt recognized the letter & guess is eq to solution
+                        if ((lUsed[j] != 1) && (guessC == soluC)) {
                             colorLayout[i] = 2;
+                            lUsed[j] = 1;
+                            break;
                         }
                     }
                 }
+
 
                 for (int i = 0; i < 5; i++) {
                     System.out.println(colorLayout[i]);
