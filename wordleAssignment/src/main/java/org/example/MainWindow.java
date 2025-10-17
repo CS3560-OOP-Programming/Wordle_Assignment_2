@@ -32,8 +32,6 @@ public class MainWindow {
         //initializing array
         //switched to array to allow for personalization of chars
         w = new JLabel[6][6];
-        //array for letters used to solve duplicate bug
-        int lUsed[] = new int[solution.length()];
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel.setLayout(new GridLayout(9, 1, 0, 20));
@@ -155,6 +153,8 @@ public class MainWindow {
             //int accumulator = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
+                //array for letters used to solve duplicate bug
+                int lUsed[] = new int[solution.length()];
                 /**
                  for(int i = 0; i < 5; i++){
                  for(int j = 0; j < 5; j++){
@@ -256,7 +256,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -275,7 +275,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -294,7 +294,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -313,7 +313,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -332,7 +332,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
