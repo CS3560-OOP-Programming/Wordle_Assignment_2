@@ -21,6 +21,9 @@ public class MainWindow {
     private Dictionary dictionary;
     private final String solution;
     private JTextField gChar1, gChar2, gChar3, gChar4, gChar5;
+    //private final String solution;
+    final String solution = "Bears";
+
 
     public MainWindow() {
         dictionary = new Dictionary("wordleAssignment/ValidWords.txt");
@@ -169,6 +172,8 @@ public class MainWindow {
             //int accumulator = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
+                //array for letters used to solve duplicate bug
+                int lUsed[] = new int[solution.length()];
                 /**
                  for(int i = 0; i < 5; i++){
                  for(int j = 0; j < 5; j++){
@@ -180,6 +185,8 @@ public class MainWindow {
                 //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
+
+                //Green coloring logic here
                 for (int i = 0; i < solution.length(); i++) {
                     //each initializes the string version of the solution char
                     //compares it to the input char
@@ -193,6 +200,8 @@ public class MainWindow {
                         colorLayout[i] = 1;
                         keyboard.updateKeyState(guessC, LetterState.CORRECT);
                     }
+                    char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    //initializes solution char
                     for (int j = 0; j < solution.length(); j++) {
                         //exits loop if already green
                         if (colorLayout[i] == 1) {
@@ -209,6 +218,7 @@ public class MainWindow {
                         keyboard.updateKeyState(guessC, LetterState.NOT_IN_WORD);
                     }
                 }
+
 
                 for (int i = 0; i < 5; i++) {
                     System.out.println(colorLayout[i]);
@@ -263,7 +273,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -282,7 +292,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -301,7 +311,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -320,7 +330,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
@@ -339,7 +349,7 @@ public class MainWindow {
                             if (colorLayout[i] == 1) {
                                 w[guessNum - 1][i].setForeground(Color.GREEN);
                             } else if (colorLayout[i] == 2) {
-                                w[guessNum - 1][i].setForeground(Color.YELLOW);
+                                w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
                         w[guessNum - 1][0].setText(gChar1.getText());
