@@ -21,8 +21,6 @@ public class MainWindow {
     private Dictionary dictionary;
     private final String solution;
     private JTextField gChar1, gChar2, gChar3, gChar4, gChar5;
-    //private final String solution;
-    final String solution = "Bears";
 
 
     public MainWindow() {
@@ -33,7 +31,8 @@ public class MainWindow {
         Random rndm = new Random();
         int rndmIndex = rndm.nextInt(dictionary.size());
         solution = validWords[rndmIndex];
-        System.out.println("The solution is set to: "+solution);
+        //solution = "bears";
+        System.out.println("The solution is set to: " + solution);
 
         frame = new JFrame();
         frame.setTitle("Wordle.exe");
@@ -198,24 +197,28 @@ public class MainWindow {
                     if (guessC == soluC) {
                         //System.out.println("Match");
                         colorLayout[i] = 1;
+                        lUsed[i] = 1;
                         keyboard.updateKeyState(guessC, LetterState.CORRECT);
                     }
-                    char guessC = Character.toUpperCase(guess[i].charAt(0));
-                    //initializes solution char
-                    for (int j = 0; j < solution.length(); j++) {
-                        //exits loop if already green
-                        if (colorLayout[i] == 1) {
-                            break;
-                        }
-                        if ((solution.toUpperCase().contains(String.valueOf(guessC)))) {
-                            colorLayout[i] = 2; //yellow
-                        }
+                }
+                //yellow coloring
+                for (int i = 0; i < solution.length(); i++) {
+                    if (colorLayout[i] == 1) {
+                        continue;
                     }
+                    char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    for (int j = 0; j < solution.length(); j++) {
+                        char soluC = Character.toUpperCase(solution.charAt(j));
+                        if ((lUsed[j] != 1) && (guessC == soluC)) {
+                            colorLayout[i] = 2;
+                            lUsed[j] = 1;
+                            if (colorLayout[i] == 2) {
+                                keyboard.updateKeyState(guessC, LetterState.IN_WORD);
+                            } else if (colorLayout[i] == 0) {
+                                keyboard.updateKeyState(guessC, LetterState.NOT_IN_WORD);
+                            }
 
-                    if(colorLayout[i] == 2) {
-                        keyboard.updateKeyState(guessC, LetterState.IN_WORD);
-                    }else if(colorLayout[i] == 0){
-                        keyboard.updateKeyState(guessC, LetterState.NOT_IN_WORD);
+                        }
                     }
                 }
 
@@ -229,7 +232,7 @@ public class MainWindow {
                 String modifiedGWord = gWord.trim().toLowerCase();
 
                 //Checking if the guessed word is in our list
-                if(!dictionary.isInDictionary(modifiedGWord)){
+                if (!dictionary.isInDictionary(modifiedGWord)) {
                     JOptionPane.showMessageDialog(frame, "That is not a valid word entry.");
                     return;
                 }
@@ -378,10 +381,10 @@ public class MainWindow {
         panel.add(enterButton);
     }
 
-    public void inputKeyboardLetter(char letter){
+    public void inputKeyboardLetter(char letter) {
         JTextField[] fields = {gChar1, gChar2, gChar3, gChar4, gChar5};
-        for(JTextField field : fields){
-            if(field.getText().isEmpty()){
+        for (JTextField field : fields) {
+            if (field.getText().isEmpty()) {
                 field.setText(String.valueOf(letter).toLowerCase());
                 break;
             }
