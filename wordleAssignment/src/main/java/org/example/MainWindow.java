@@ -184,6 +184,15 @@ public class MainWindow {
                 //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
+                String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
+
+                //Make sure word is in lower case and has no trailing spaces so we can check if the dictionary contains it
+                String modifiedGWord = gWord.trim().toLowerCase();
+
+                if (!dictionary.isInDictionary(modifiedGWord)) {
+                    JOptionPane.showMessageDialog(frame, "That is not a valid word entry.");
+                    return;
+                }
 
                 //Green coloring logic here
                 for (int i = 0; i < solution.length(); i++) {
@@ -222,19 +231,16 @@ public class MainWindow {
                     }
                 }
 
+                //grey coloring
+                for(int i = 0; i < solution.length(); i++){
+                    char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    if (colorLayout[i] == 0){
+                        keyboard.updateKeyState(guessC, LetterState.NOT_IN_WORD);
+                    }
+                }
 
                 for (int i = 0; i < 5; i++) {
                     System.out.println(colorLayout[i]);
-                }
-                String gWord = gChar1.getText() + gChar2.getText() + gChar3.getText() + gChar4.getText() + gChar5.getText();
-
-                //Make sure word is in lower case and has no trailing spaces so we can check if the dictionary contains it
-                String modifiedGWord = gWord.trim().toLowerCase();
-
-                //Checking if the guessed word is in our list
-                if (!dictionary.isInDictionary(modifiedGWord)) {
-                    JOptionPane.showMessageDialog(frame, "That is not a valid word entry.");
-                    return;
                 }
 
                 //Prints solution to console!
