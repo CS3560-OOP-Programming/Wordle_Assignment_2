@@ -40,7 +40,7 @@ public class KeyboardPanel extends JPanel{
         //make sure key actually exists on keyboard
         if (key == null)
             return;
-        
+
         if(currState == LetterState.CORRECT)
             return;
 
