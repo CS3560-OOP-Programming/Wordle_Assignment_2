@@ -13,7 +13,5 @@ public class Main {
                 main.show();
             }
         });
-        //Temporary early exit
-        //System.exit(0);
     }
 }

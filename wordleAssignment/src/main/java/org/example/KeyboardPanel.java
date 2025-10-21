@@ -36,10 +36,18 @@ public class KeyboardPanel extends JPanel{
 
     public void updateKeyState(char letter, LetterState updatedState){
         KeyLetter key = keyboardHashMap.get(Character.toUpperCase(letter));
+        LetterState currState = key.getState();
         //make sure key actually exists on keyboard
-        if(key!=null){
-            key.setState(updatedState);
-            key.changeColor();
-        }
+        if (key == null)
+            return;
+        
+        if(currState == LetterState.CORRECT)
+            return;
+
+        if(currState == LetterState.IN_WORD && updatedState == LetterState.NOT_IN_WORD)
+            return;
+
+        key.setState(updatedState);
+        key.changeColor();
     }
 }

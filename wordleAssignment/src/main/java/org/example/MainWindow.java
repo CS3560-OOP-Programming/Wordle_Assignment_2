@@ -14,10 +14,7 @@ public class MainWindow {
     private KeyboardPanel keyboard;
     private JLabel label;
     private JLabel[][] w;
-    private JLabel w1, w2, w3, w4, w5, w6;
-    private JButton enterButton;
     private int guessNum = 1;
-    private JTextField[] gChar;
     private Dictionary dictionary;
     private final String solution;
     private JTextField gChar1, gChar2, gChar3, gChar4, gChar5;
@@ -114,22 +111,6 @@ public class MainWindow {
 
         frame.add(keyboardWrapper, BorderLayout.SOUTH);
 
-        //Initializing each individual guess character with max length 1, font type, and size(subject to OOP changes?)
-        //Also calls keyInputValidation to prevent digits and non alphabet chars from being called
-        //Below I started on some code making gchar an array instead, but reverted to original(DELETE BEFORE SUBMISSION)
-        /**
-         gChar = new JTextField[6];
-         for(int i = 0; i < 5; i++){
-         //JTextField gChar[i] = new JTextField(1);
-         gChar[i].setFont(new Font("Arial", Font.BOLD, 22));
-         gChar[i].setHorizontalAlignment(JTextField.CENTER);
-         gChar[i].setPreferredSize(new Dimension(40,40));
-         textPanel.add(gChar[i]);
-         gChar[i].addKeyListener(new keyInputValidation(gChar[i]));
-         }
-         **/
-
-
         gChar1 = new JTextField(1);
         gChar1.setFont(new Font("Arial", Font.BOLD, 22));
         gChar1.setHorizontalAlignment(JTextField.CENTER);
@@ -173,14 +154,7 @@ public class MainWindow {
             public void actionPerformed(ActionEvent e) {
                 //array for letters used to solve duplicate bug
                 int lUsed[] = new int[solution.length()];
-                /**
-                 for(int i = 0; i < 5; i++){
-                 for(int j = 0; j < 5; j++){
-                 w[i][j].setSize(new Dimension(40, 40));
-                 w[i][j].setFont(new Font("Arial", Font.BOLD, 22));
-                 }
-                 }
-                 **/
+
                 //solution = solution.toUpperCase();
                 int[] colorLayout = new int[5];
                 String[] guess = {gChar1.getText(), gChar2.getText(), gChar3.getText(), gChar4.getText(), gChar5.getText()};
@@ -252,10 +226,6 @@ public class MainWindow {
                 switch (guessNum) {
                     case 1:
 
-                        //w[0][0].setText(gChar[0].getText());
-
-                        //w[0][3].setForeground(Color.GREEN);
-                        //w1.setForeground(Color.GREEN);
                         //Code below sets the characters to the users guess(green implementation)
                         for (int i = 0; i < 5; i++) {
                             if (colorLayout[i] == 1) {
