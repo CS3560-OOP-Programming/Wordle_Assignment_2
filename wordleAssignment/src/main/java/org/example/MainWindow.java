@@ -163,6 +163,11 @@ public class MainWindow {
 
                 if (!dictionary.isInDictionary(modifiedGWord)) {
                     JOptionPane.showMessageDialog(frame, "That is not a valid word entry.");
+                    gChar1.setText("");
+                    gChar2.setText("");
+                    gChar3.setText("");
+                    gChar4.setText("");
+                    gChar5.setText("");
                     return;
                 }
 
@@ -400,6 +405,11 @@ public class MainWindow {
 
                 System.out.println("guess " + guessNum);
                 guessNum++;
+                gChar1.setText("");
+                gChar2.setText("");
+                gChar3.setText("");
+                gChar4.setText("");
+                gChar5.setText("");
             }
         });
 
