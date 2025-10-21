@@ -118,7 +118,6 @@ public class MainWindow {
         textPanel.add(gChar1);
         gChar1.addKeyListener(new keyInputValidation(gChar1));
 
-
         gChar2 = new JTextField(1);
         gChar2.setFont(new Font("Arial", Font.BOLD, 22));
         gChar2.setHorizontalAlignment(JTextField.CENTER);
@@ -217,7 +216,7 @@ public class MainWindow {
                     System.out.println(colorLayout[i]);
                 }
 
-                //Prints solution to console!
+                //Prints guess to console!
                 System.out.println(modifiedGWord);
 
                 //Want to make it so that after it checks if the word is an actual dictionary word it  continues and updates the guess num
@@ -234,6 +233,7 @@ public class MainWindow {
                                 w[guessNum - 1][i].setForeground(new Color(225, 225, 0));
                             }
                         }
+
                         //redundant code, can be optimized
                         w[guessNum - 1][0].setText(gChar1.getText());
                         w[guessNum - 1][0].setFont(new Font("Arial", Font.BOLD, 32));
@@ -245,6 +245,13 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
 
                         break;
                     case 2:
@@ -265,6 +272,14 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
+
                         break;
                     case 3:
                         for (int i = 0; i < 5; i++) {
@@ -284,6 +299,14 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
+
                         break;
                     case 4:
                         for (int i = 0; i < 5; i++) {
@@ -303,6 +326,14 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
+
                         break;
                     case 5:
                         for (int i = 0; i < 5; i++) {
@@ -322,6 +353,14 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
+
                         break;
                     case 6:
                         for (int i = 0; i < 5; i++) {
@@ -341,6 +380,14 @@ public class MainWindow {
                         w[guessNum - 1][3].setFont(new Font("Arial", Font.BOLD, 32));
                         w[guessNum - 1][4].setText(gChar5.getText());
                         w[guessNum - 1][4].setFont(new Font("Arial", Font.BOLD, 32));
+
+                        //Win message and checking if the guess equals the solution
+                        if(modifiedGWord.equals(solution)){
+                            JOptionPane.showMessageDialog(frame, "You guessed the word!", "You won!", JOptionPane.INFORMATION_MESSAGE);
+                            frame.dispose();
+                            System.exit(0);
+                        }
+
                         break;
                     default:
                         JOptionPane.showMessageDialog(frame, "You ran out of guesses!", "You lost...", JOptionPane.INFORMATION_MESSAGE);
