@@ -1,31 +1,40 @@
 # Wordle_Assignment_2
 
 ## Team Members
-- Alex Auyon
-- Garrison Gibson
+- Alex Auyon  
+- Garrison Gibson  
 
 ## How to Run
-1. Clone repository: `git clone [URL]`
-2. Open in IntelliJ/Eclipse or any other IDE
-3. Run `Main.java`
+1. Clone repository: `git clone [URL]`  
+2. Open in IntelliJ/Eclipse or any other IDE  
+3. Run `Main.java`  
 
 ## Features Implemented
-- Guess Input: using the submit button, the program accepts input from the user
-- Feature 2: Description
-- [Extra Credit] Feature X: Description
+- **Guess Input**: Using the submit button, the program accepts guesses from the user  
+- **Feedback System**: Letters on both the keyboard and the main panel holding the rows of guesses are updated to green, yellow, or dark grey
+  - Green: Letter is in the solution and in the correct spot
+  - Yellow: Letter is in the solution and in the wrong spot
+  - Dark Grey: Letter is not in the solution and has been used by the player
+- **Dictionary Validation**: Only valid 5 letter english words are accepted
+- **Win/Lose Feature**: The player loses once they use up their 6 guesses without submitting the solution
+- **Visual Keyboard**: Keyboard interface on the wordle window reflects each letters' state
 
 ## Controls
--Enter each letter slot by slot using the *keyboard*
--Delete a letter using *backspace*
--Press the *submit button* to enter a guess
+- Enter each letter slot by slot using the implemented *keyboard interface* or your own *keyboard*
+- Delete a letter using *backspace*
+- Press the *"submit guess" button* to enter a guess
 
-## Known Issues
-- Issue 1: Description and workaround
-- Issue 2: Description
+## Known Issues  
+As of now, there are no known issues, however below are some of the issues we have since fixed.  
+- **Issue 1**: Keyboard keys on the interface were being updated (to green, yellow, dark grey) when invalid words were being submitted.
+  Due to the structure of the code, the *key state* and therefore color was being updated before we checked if the guess was a valid  
+  english word. Re-organizing the code to make sure the dictionary contained the guess before any key and letter states were updated fixed this issue. 
+
+- **Issue 2**: Letter state/color was being overwritten on the visual keyboard in the cases where the solution and guess had two instances of one letter. For example, if the solution was "bongo"  
+  and the user guessed the word "broom," the keyboard key for "o" [TBC THIS SECTION IS NOT DONE YET]
 
 ## External Libraries
-- Gson 2.10.1 (JSON parsing)
-- JUnit 4.13 (testing)
+- None were used
 
 ## Credits
 - Txt file of valid 5 letter words sourced from https://github.com/darkermango/5-Letter-words.git
