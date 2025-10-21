@@ -404,6 +404,11 @@ public class MainWindow {
                 }
 
                 System.out.println("guess " + guessNum);
+                if(guessNum == 6){
+                    JOptionPane.showMessageDialog(frame, "You ran out of guesses!", "You lost...", JOptionPane.INFORMATION_MESSAGE);
+                    frame.dispose();
+                    System.exit(0);
+                }
                 guessNum++;
                 gChar1.setText("");
                 gChar2.setText("");
