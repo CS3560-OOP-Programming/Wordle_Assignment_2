@@ -16,7 +16,8 @@
   - Yellow: Letter is in the solution and in the wrong spot
   - Dark Grey: Letter is not in the solution and has been used by the player
 - **Dictionary Validation**: Only valid 5 letter english words are accepted
-- **Win/Lose Feature**: The player loses once they use up their 6 guesses without submitting the solution
+- **Win/Lose Feature**: The player loses once they use up their 6 guesses without guessing the solution
+  - Winning or losing produces a popup message that, upon being closed, also closes the Wordle window
 - **Visual Keyboard**: Keyboard interface on the wordle window reflects each letters' state
 
 ## Controls
@@ -25,7 +26,7 @@
 - Press the *"submit guess" button* to enter a guess
 
 ## Known Issues  
-As of now, there are no known issues, however below are some of the issues we have since fixed.  
+As of now, there are no known issues, however below are some of the issues we have since fixed:  
 - **Issue 1**: Keyboard keys on the interface were being updated (to green, yellow, dark grey) when invalid words were being submitted.
   Due to the structure of the code, the *key state* and therefore color was being updated before we checked if the guess was a valid  
   english word. Re-organizing the code to make sure the dictionary contained the guess before any key and letter states were updated fixed this issue. 
