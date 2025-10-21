@@ -20,7 +20,7 @@ public class MainWindow {
 
 
     public MainWindow() {
-        dictionary = new Dictionary("wordleAssignment/ValidWords.txt");
+        dictionary = new Dictionary("wordleAssignment/src/assets/ValidWords.txt");
 
         //Setting solution to a random word in the validWords file
         String[] validWords = dictionary.getValidWords().toArray(new String[dictionary.size()]);
