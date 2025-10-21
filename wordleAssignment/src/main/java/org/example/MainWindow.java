@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
 import java.util.*;
 
 public class MainWindow {
@@ -28,7 +27,7 @@ public class MainWindow {
         Random rndm = new Random();
         int rndmIndex = rndm.nextInt(dictionary.size());
         solution = validWords[rndmIndex];
-        //solution = "bears";
+        //solution = "eerie";
         System.out.println("The solution is set to: " + solution);
 
         frame = new JFrame();
@@ -189,6 +188,8 @@ public class MainWindow {
                         continue;
                     }
                     char guessC = Character.toUpperCase(guess[i].charAt(0));
+                    //checks if a yellow match has been found
+                    boolean yFound = false;
                     for (int j = 0; j < solution.length(); j++) {
                         char soluC = Character.toUpperCase(solution.charAt(j));
                         if ((lUsed[j] != 1) && (guessC == soluC)) {
@@ -199,7 +200,9 @@ public class MainWindow {
                             } else if (colorLayout[i] == 0) {
                                 keyboard.updateKeyState(guessC, LetterState.NOT_IN_WORD);
                             }
-
+                            //exits loop if match detected
+                            yFound = true;
+                            break;
                         }
                     }
                 }
