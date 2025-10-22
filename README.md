@@ -39,5 +39,8 @@ As of now, there are no known issues, however below are some of the issues we ha
 ## External Libraries
 - None were used
 
+## Video Demo
+- Here is a link to our video demo: https://youtu.be/2_1acbDz-LM
+
 ## Credits
 - Txt file of valid 5 letter words sourced from https://github.com/darkermango/5-Letter-words.git
