@@ -27,14 +27,9 @@
 
 ## Known Issues  
 As of now, there are no known issues, however below are some of the issues we have since fixed:  
-- **Issue 1**: Keyboard keys on the interface were being updated (to green, yellow, dark grey) when invalid words were being submitted.
-  Due to the structure of the code, the *key state* and therefore color was being updated before we checked if the guess was a valid  
-  english word. Re-organizing the code to make sure the dictionary contained the guess before any key and letter states were updated fixed this issue. 
+- **Issue 1**: Keyboard keys on the interface were being updated (to green, yellow, dark grey) when invalid words were being submitted. Due to the structure of the code, the *key state* and therefore color was being updated before we checked if the guess was a valid english word. Re-organizing the code to make sure the dictionary contained the guess before any key and letter states were updated fixed this issue. 
 
-- **Issue 2**: Letter state/color was being overwritten on the visual keyboard in the cases where the solution and guess had two instances of one letter. For example, if the solution was "bongo" and the user
-  guessed the word "booms," the color for the "o" keyboard key would be overwritten and displayed as yellow instead of green because the second instance of the "o" in the guess word was in the wrong spot.  
-  However, in the original Wordle, once a letter is set to green, the color should stay as green regardless of the results from other instances of the letter. Including checks so
-  that the function for updating a key's state would mirror this logic fixed the issue. 
+- **Issue 2**: Letter state/color was being overwritten on the visual keyboard in the cases where the solution and guess had two instances of one letter. For example, if the solution was "bongo" and the user guessed the word "booms," the color for the "o" keyboard key would be overwritten and displayed as yellow instead of green because the second instance of the "o" in the guess word was in the wrong spot. However, in the original Wordle, once a letter is set to green, the color should stay as green regardless of the results from other instances of the letter. Including checks so that the function for updating a key's state would mirror this logic fixed the issue. 
 
 ## External Libraries
 - None were used
